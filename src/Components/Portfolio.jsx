@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink, Star, Rocket, Globe, Code, Database, Server } from 'lucide-react';
 
+// Import tech logos (you'll need to install react-icons or use image imports)
+import { FaJava, FaReact, FaNodeJs, FaJs, FaHtml5, FaCss3, FaGitAlt } from 'react-icons/fa';
+import { SiSpringboot, SiMysql } from 'react-icons/si';
+
 const CosmicPortfolio = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [activeSection, setActiveSection] = useState('hero');
@@ -127,14 +131,14 @@ const CosmicPortfolio = () => {
   }, []);
 
   const skills = [
-    { name: 'Java', icon: '☕', color: 'from-orange-400 to-red-500' },
-    { name: 'Spring Boot', icon: '🍃', color: 'from-green-400 to-emerald-500' },
-    { name: 'React.js', icon: '⚛️', color: 'from-blue-400 to-cyan-500' },
-    { name: 'Node.js', icon: '🚀', color: 'from-green-500 to-lime-500' },
-    { name: 'MySQL', icon: '🗄️', color: 'from-blue-500 to-indigo-500' },
-    { name: 'JavaScript', icon: '⚡', color: 'from-yellow-400 to-orange-500' },
-    { name: 'HTML/CSS', icon: '🎨', color: 'from-pink-400 to-purple-500' },
-    { name: 'Git', icon: '🔄', color: 'from-gray-400 to-slate-500' }
+    { name: 'Java', icon: <FaJava className="w-8 h-8" />, color: 'from-orange-400 to-red-500' },
+    { name: 'Spring Boot', icon: <SiSpringboot className="w-8 h-8" />, color: 'from-green-400 to-emerald-500' },
+    { name: 'React.js', icon: <FaReact className="w-8 h-8" />, color: 'from-blue-400 to-cyan-500' },
+    { name: 'Node.js', icon: <FaNodeJs className="w-8 h-8" />, color: 'from-green-500 to-lime-500' },
+    { name: 'MySQL', icon: <SiMysql className="w-8 h-8" />, color: 'from-blue-500 to-indigo-500' },
+    { name: 'JavaScript', icon: <FaJs className="w-8 h-8" />, color: 'from-yellow-400 to-orange-500' },
+    { name: 'HTML/CSS', icon: <div className="flex gap-1"><FaHtml5 className="w-8 h-8" /><FaCss3 className="w-8 h-8" /></div>, color: 'from-pink-400 to-purple-500' },
+    { name: 'Git', icon: <FaGitAlt className="w-8 h-8" />, color: 'from-gray-400 to-slate-500' }
   ];
 
   const projects = [
@@ -311,7 +315,7 @@ const CosmicPortfolio = () => {
       {/* Skills Constellation */}
       <section id="about" className="py-20 relative">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
             Tech Constellation
           </h2>
           
@@ -324,7 +328,7 @@ const CosmicPortfolio = () => {
               >
                 <div className={`relative p-6 bg-gradient-to-r ${skill.color} rounded-xl backdrop-blur-sm border border-white border-opacity-20 hover:scale-110 transition-all duration-300 cursor-pointer animate-fade-in-up`}>
                   <div className="text-center">
-                    <div className="text-3xl mb-3 animate-float" style={{ animationDelay: `${index * 0.2}s` }}>
+                    <div className="flex justify-center mb-3 animate-float" style={{ animationDelay: `${index * 0.2}s` }}>
                       {skill.icon}
                     </div>
                     <h3 className="font-semibold text-white">{skill.name}</h3>
@@ -347,7 +351,7 @@ const CosmicPortfolio = () => {
       {/* Projects Galaxy */}
       <section id="projects" className="py-20 relative">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
             Stellar Creations
           </h2>
           
@@ -401,7 +405,7 @@ const CosmicPortfolio = () => {
       {/* Experience Timeline */}
       <section id="experience" className="py-20 relative">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
             Mission Timeline
           </h2>
           
@@ -432,7 +436,7 @@ const CosmicPortfolio = () => {
       {/* Education Galaxy */}
       <section className="py-20 relative">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
             Academic Galaxy
           </h2>
           
@@ -463,7 +467,7 @@ const CosmicPortfolio = () => {
       {/* Contact Hub */}
       <section id="contact" className="py-20 relative">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
             Communication Hub
           </h2>
           
