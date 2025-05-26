@@ -5,6 +5,8 @@ import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink, Star, Rocket, Glob
 import { FaJava, FaReact, FaNodeJs, FaJs, FaHtml5, FaCss3, FaGitAlt } from 'react-icons/fa';
 import { SiSpringboot, SiMysql } from 'react-icons/si';
 
+
+
 const CosmicPortfolio = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [activeSection, setActiveSection] = useState('hero');
@@ -279,26 +281,26 @@ const CosmicPortfolio = () => {
           </h1>
           
           <p className="text-2xl md:text-3xl mb-8 text-purple-200 animate-fade-in-delay">
-            Digital Space Explorer
+            Full-stack Developer
           </p>
           
           <p className="text-lg md:text-xl mb-12 text-white text-opacity-80 max-w-2xl mx-auto animate-fade-in-delay-2">
-            Navigating the cosmic realm of Full Stack Development, crafting stellar applications that bridge the digital universe
+           "Transforming ideas into fully-functional web applications through comprehensive full stack development"
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-semibold overflow-hidden hover:scale-105 transition-transform duration-300">
               <span className="relative z-10 flex items-center gap-2">
                 <Rocket className="w-5 h-5 group-hover:animate-bounce" />
-                Launch Projects
+                 Projects
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
             
-            <button className="group px-8 py-4 border-2 border-white border-opacity-30 rounded-full text-white font-semibold hover:bg-white hover:bg-opacity-10 hover:border-white hover:border-opacity-50 transition-all duration-300">
+            <button className="group px-8 py-4 border-2 border-white border-opacity-30 rounded-full text-white font-semibold hover:bg-white hover:bg-opacity-10 hover:border-white hover:border-opacity-50 transition-all duration-300" >
               <span className="flex items-center gap-2">
                 <Mail className="w-5 h-5 group-hover:animate-pulse" />
-                Contact Mission Control
+                Contact on mail
               </span>
             </button>
           </div>
@@ -316,7 +318,7 @@ const CosmicPortfolio = () => {
       <section id="about" className="py-20 relative">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
-            Tech Constellation
+            Skills
           </h2>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
@@ -352,7 +354,7 @@ const CosmicPortfolio = () => {
       <section id="projects" className="py-20 relative">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
-            Stellar Creations
+            Projects
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -406,7 +408,7 @@ const CosmicPortfolio = () => {
       <section id="experience" className="py-20 relative">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
-            Mission Timeline
+            Experiance 
           </h2>
           
           <div className="max-w-4xl mx-auto">
@@ -437,7 +439,7 @@ const CosmicPortfolio = () => {
       <section className="py-20 relative">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
-            Academic Galaxy
+            Academics
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -468,26 +470,26 @@ const CosmicPortfolio = () => {
       <section id="contact" className="py-20 relative">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
-            Communication Hub
+            Contact
           </h2>
           
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               <div className="group text-center p-6 bg-gradient-to-br from-purple-600 from-opacity-20 to-pink-600 to-opacity-20 rounded-2xl backdrop-blur-sm border border-white border-opacity-20 hover:scale-105 transition-all duration-300">
                 <Phone className="w-12 h-12 mx-auto mb-4 text-purple-400 group-hover:animate-bounce" />
-                <h3 className="text-lg font-semibold mb-2">Quantum Phone</h3>
+                <h3 className="text-lg font-semibold mb-2">Phone</h3>
                 <p className="text-white text-opacity-80">+91 8208367017</p>
               </div>
               
               <div className="group text-center p-6 bg-gradient-to-br from-blue-600 from-opacity-20 to-cyan-600 to-opacity-20 rounded-2xl backdrop-blur-sm border border-white border-opacity-20 hover:scale-105 transition-all duration-300">
                 <Mail className="w-12 h-12 mx-auto mb-4 text-blue-400 group-hover:animate-pulse" />
-                <h3 className="text-lg font-semibold mb-2">Cosmic Email</h3>
+                <h3 className="text-lg font-semibold mb-2"> Email</h3>
                 <p className="text-white text-opacity-80 break-all">sumitmahankale7@gmail.com</p>
               </div>
               
               <div className="group text-center p-6 bg-gradient-to-br from-green-600 from-opacity-20 to-emerald-600 to-opacity-20 rounded-2xl backdrop-blur-sm border border-white border-opacity-20 hover:scale-105 transition-all duration-300">
                 <MapPin className="w-12 h-12 mx-auto mb-4 text-green-400 group-hover:animate-bounce" />
-                <h3 className="text-lg font-semibold mb-2">Space Station</h3>
+                <h3 className="text-lg font-semibold mb-2">Address</h3>
                 <p className="text-white text-opacity-80">Talegaon-dabhade, Pune-410506</p>
               </div>
             </div>
@@ -496,7 +498,7 @@ const CosmicPortfolio = () => {
               <button className="group relative px-12 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-semibold text-lg overflow-hidden hover:scale-105 transition-transform duration-300">
                 <span className="relative z-10 flex items-center gap-3">
                   <Rocket className="w-6 h-6 group-hover:animate-bounce" />
-                  Send Message to Space
+                  Send Message
                   <Star className="w-6 h-6 group-hover:animate-spin" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -510,7 +512,7 @@ const CosmicPortfolio = () => {
       <footer className="py-12 bg-black bg-opacity-30 backdrop-blur-sm border-t border-white border-opacity-10">
         <div className="container mx-auto px-6 text-center">
           <p className="text-white text-opacity-60 mb-4">
-            © 2024 Sumit Mahankale - Digital Space Explorer
+            © 2025 Sumit Mahankale - Full Stack Developer
           </p>
           <p className="text-white text-opacity-40 text-sm">
             Crafted with cosmic energy and stellar dedication ✨
