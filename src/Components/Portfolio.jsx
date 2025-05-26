@@ -148,19 +148,22 @@ const CosmicPortfolio = () => {
       name: 'FindMySpot',
       description: 'Real-time parking locator using MERN stack with Leaflet maps',
       tech: ['React.js', 'Node.js', 'MySQL', 'Google Maps'],
-      color: 'from-purple-600 to-pink-600'
+      color: 'from-purple-600 to-pink-600',
+      link: 'https://github.com/sumitmahankale/FindMySpot'
     },
     {
       name: 'Splitwise System',
       description: 'Expense management system with Spring Boot backend',
       tech: ['Spring Boot', 'MySQL', 'JSP'],
-      color: 'from-blue-600 to-cyan-600'
+      color: 'from-blue-600 to-cyan-600',
+      link: 'https://github.com/sumitmahankale/SplitWise'
     },
     {
       name: 'EduForum',
       description: 'Academic forum with AI chatbot integration',
       tech: ['React.js', 'Node.js', 'PostgreSQL', 'AI'],
-      color: 'from-green-600 to-emerald-600'
+      color: 'from-green-600 to-emerald-600',
+      link: 'https://github.com/sumitmahankale/EduForum'
     }
   ];
 
@@ -289,7 +292,10 @@ const CosmicPortfolio = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-semibold overflow-hidden hover:scale-105 transition-transform duration-300">
+            <button 
+              onClick={() => scrollToSection('projects')}
+              className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-semibold overflow-hidden hover:scale-105 transition-transform duration-300"
+            >
               <span className="relative z-10 flex items-center gap-2">
                 <Rocket className="w-5 h-5 group-hover:animate-bounce" />
                  Projects
@@ -297,7 +303,10 @@ const CosmicPortfolio = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
             
-            <button className="group px-8 py-4 border-2 border-white border-opacity-30 rounded-full text-white font-semibold hover:bg-white hover:bg-opacity-10 hover:border-white hover:border-opacity-50 transition-all duration-300" >
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="group px-8 py-4 border-2 border-white border-opacity-30 rounded-full text-white font-semibold hover:bg-white hover:bg-opacity-10 hover:border-white hover:border-opacity-50 transition-all duration-300"
+            >
               <span className="flex items-center gap-2">
                 <Mail className="w-5 h-5 group-hover:animate-pulse" />
                 Contact on mail
@@ -389,9 +398,12 @@ const CosmicPortfolio = () => {
                       ))}
                     </div>
                     
-                    <button className="group-btn flex items-center gap-2 text-white hover:text-black bg-white bg-opacity-20 hover:bg-white hover:bg-opacity-90 px-6 py-3 rounded-full transition-all duration-300 border border-white border-opacity-30">
+                    <button 
+                      onClick={() => window.open(project.link, '_blank')}
+                      className="group-btn flex items-center gap-2 text-white hover:text-black bg-white bg-opacity-20 hover:bg-white hover:bg-opacity-90 px-6 py-3 rounded-full transition-all duration-300 border border-white border-opacity-30"
+                    >
                       <ExternalLink className="w-4 h-4 group-hover:animate-bounce" />
-                      Launch Project
+                      Github Link
                     </button>
                   </div>
                   
@@ -495,14 +507,27 @@ const CosmicPortfolio = () => {
             </div>
             
             <div className="text-center">
-              <button className="group relative px-12 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-semibold text-lg overflow-hidden hover:scale-105 transition-transform duration-300">
-                <span className="relative z-10 flex items-center gap-3">
-                  <Rocket className="w-6 h-6 group-hover:animate-bounce" />
-                  Send Message
-                  <Star className="w-6 h-6 group-hover:animate-spin" />
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="group relative px-12 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-semibold text-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+                  <span className="relative z-10 flex items-center gap-3">
+                    <Rocket className="w-6 h-6 group-hover:animate-bounce" />
+                    Send Message
+                    <Star className="w-6 h-6 group-hover:animate-spin" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </button>
+                
+                <button 
+                  onClick={() => window.open('https://github.com/sumitmahankale', '_blank')}
+                  className="group relative px-12 py-4 bg-gradient-to-r from-gray-600 to-gray-800 rounded-full text-white font-semibold text-lg overflow-hidden hover:scale-105 transition-transform duration-300"
+                >
+                  <span className="relative z-10 flex items-center gap-3">
+                    <Github className="w-6 h-6 group-hover:animate-spin" />
+                    GitHub
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-gray-800 to-black opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
