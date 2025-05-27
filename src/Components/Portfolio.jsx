@@ -14,7 +14,7 @@ const ModernPortfolio = () => {
   const [scrollY, setScrollY] = useState(0);
   
   // Update this path to your actual image file
-  const profileImageSrc = "Sumit.png"; // Change this to your image path
+  const profileImageSrc = "Sumit2.jpg"; // Change this to your image path
 
   useEffect(() => {
     const handleScroll = () => {
@@ -246,11 +246,11 @@ const ModernPortfolio = () => {
             
             {/* Right Side - Profile Photo */}
             <div className="flex justify-center lg:justify-end">
-              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-2xl shadow-2xl relative overflow-hidden">
+              <div className="w-150 h-150 lg:w-115 lg:h-115 rounded-2xl shadow-2xl relative overflow-hidden">
                 <img 
                   src={profileImageSrc} 
                   alt="Sumit Mahankale" 
-                  className="w-full h-full object-cover rounded-2xl"
+                  className="w-full h-full object-cover rounded-1xl"
                 />
                 
                 {/* Decorative elements */}
