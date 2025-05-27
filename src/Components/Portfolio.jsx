@@ -79,7 +79,7 @@ const ModernPortfolio = () => {
 
   const stats = [
     { label: "Projects", value: "5+", icon: <Rocket className="w-6 h-6" /> },
-    { label: "CGPA", value: "8.77", icon: <Star className="w-6 h-6" /> },
+    { label: " Current CGPA", value: "8.77", icon: <Star className="w-6 h-6" /> },
     { label: "Experience", value: "3+ months", icon: <Briefcase className="w-6 h-6" /> },
     { label: "Technologies", value: "10+", icon: <Code className="w-6 h-6" /> }
   ];
