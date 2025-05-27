@@ -279,7 +279,7 @@ const ModernPortfolio = () => {
                 from Indira College of Engineering and Management, Pune. With strong foundation in 
                 full-stack development, I create innovative solutions using modern technologies.
               </p>
-              
+              <br></br>
               <div className="flex flex-wrap gap-4">
                 <a href="mailto:sumitmahankale7@gmail.com" className={`flex items-center gap-2 px-4 py-2 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-md hover:shadow-lg transition-shadow`}>
                   <Mail className="w-4 h-4" />
