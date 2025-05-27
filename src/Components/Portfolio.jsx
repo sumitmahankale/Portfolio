@@ -126,11 +126,11 @@ const ModernPortfolio = () => {
             : 'bg-white bg-opacity-90 backdrop-blur-sm border-b border-gray-100'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-14 sm:h-16">
             {/* Logo */}
             <div className="flex items-center cursor-pointer" onClick={() => scrollToSection('hero')}>
-              <CodeLogo size="w-8 h-8" />
-              <span className="ml-3 text-lg font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+              <CodeLogo size="w-6 h-6 sm:w-8 sm:h-8" />
+              <span className="ml-2 sm:ml-3 text-base sm:text-lg font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
                
               </span>
             </div>
@@ -145,7 +145,7 @@ const ModernPortfolio = () => {
                   <button
                     key={item}
                     onClick={() => scrollToSection(sectionId)}
-                    className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                    className={`relative px-3 lg:px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
                       isActive
                         ? 'text-blue-500'
                         : darkMode 
@@ -163,11 +163,11 @@ const ModernPortfolio = () => {
             </div>
             
             {/* Right Side Actions */}
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2 sm:space-x-3">
               {/* Theme Toggle */}
               <button
                 onClick={() => setDarkMode(!darkMode)}
-                className={`p-2 rounded-lg transition-all duration-200 ${
+                className={`p-1.5 sm:p-2 rounded-lg transition-all duration-200 ${
                   darkMode 
                     ? 'bg-gray-800 text-yellow-400 hover:bg-gray-700' 
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -180,7 +180,7 @@ const ModernPortfolio = () => {
               {/* Mobile Menu Button */}
               <button 
                 onClick={() => setIsMenuOpen(!isMenuOpen)} 
-                className={`md:hidden p-2 rounded-lg transition-colors ${
+                className={`md:hidden p-1.5 sm:p-2 rounded-lg transition-colors ${
                   darkMode 
                     ? 'text-gray-300 hover:text-white hover:bg-gray-800' 
                     : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
@@ -230,126 +230,122 @@ const ModernPortfolio = () => {
       </nav>
 
       {/* Hero Section with Profile Photo */}
-      <section id="hero" className="min-h-screen flex items-center justify-center pt-20">
-        <div className="max-w-7xl mx-auto px-6 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section id="hero" className="min-h-screen flex items-center justify-center pt-16 sm:pt-20 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Side - Text Content */}
-            <div className="text-center lg:text-left">
-              <div className="lg:hidden w-24 h-24 mx-auto mb-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                <CodeLogo size="w-12 h-12" />
+            <div className="text-center lg:text-left order-2 lg:order-1">
+              <div className="lg:hidden w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-6 sm:mb-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                <CodeLogo size="w-10 h-10 sm:w-12 sm:h-12" />
               </div>
-              <h4 className="text-2xl md:text-2xl lg:text-3xl font-semibold mb-2">Hello, i am</h4>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">Sumit Mahankale</h1>
-              <div className="text-xl md:text-2xl lg:text-3xl bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent mb-8 font-semibold">
+              <h4 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-2">Hello, i am</h4>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight">Sumit Mahankale</h1>
+              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent mb-6 sm:mb-8 font-semibold">
                 Full-Stack Developer
               </div>
               
-              <p className={`text-lg mb-12 max-w-2xl mx-auto lg:mx-0 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+              <p className={`text-base sm:text-lg mb-8 sm:mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                 Passionate about crafting innovative digital solutions with modern technologies. 
                 Specializing in full-stack development with MERN and Spring Boot.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-6 sm:mb-8">
                 <button 
                   onClick={() => scrollToSection('projects')}
-                  className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-full transition-transform hover:scale-105"
+                  className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-transform hover:scale-105"
                 >
-                  <span className="flex items-center gap-2 font-semibold">
-                    <Rocket className="w-5 h-5" />
+                  <span className="flex items-center justify-center gap-2 font-semibold text-sm sm:text-base">
+                    <Rocket className="w-4 h-4 sm:w-5 sm:h-5" />
                     View My Work
                   </span>
                 </button>
                 
                 <button 
                   onClick={() => scrollToSection('contact')}
-                  className="border-2 border-blue-500 text-blue-500 px-8 py-4 rounded-full hover:bg-blue-500 hover:text-white transition-all"
+                  className="border-2 border-blue-500 text-blue-500 px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-blue-500 hover:text-white transition-all"
                 >
-                  <span className="flex items-center gap-2">
-                    <Mail className="w-5 h-5" />
+                  <span className="flex items-center justify-center gap-2 text-sm sm:text-base">
+                    <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                     Get In Touch
                   </span>
                 </button>
               </div>
 
               {/* Social Media Icons */}
-              <div className="flex gap-4 justify-center lg:justify-start mb-16">
+              <div className="flex gap-3 sm:gap-4 justify-center lg:justify-start mb-12 sm:mb-16">
                 {socialLinks.map((social) => (
                   <a
                     key={social.name}
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-3 rounded-full transition-all duration-300 transform hover:scale-110 ${
+                    className={`p-2 sm:p-3 rounded-full transition-all duration-300 transform hover:scale-110 ${
                       darkMode 
                         ? 'bg-gray-800 text-gray-400 hover:bg-gray-700' 
                         : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                     } ${social.color} shadow-lg hover:shadow-xl`}
                     aria-label={`Visit my ${social.name} profile`}
                   >
-                    {social.icon}
+                    <div className="w-4 h-4 sm:w-5 sm:h-5">
+                      {social.icon}
+                    </div>
                   </a>
                 ))}
               </div>
             </div>
             
             {/* Right Side - Profile Photo */}
-            <div className="flex justify-center lg:justify-end">
-              <div className="w-150 h-150 lg:w-115 lg:h-115 rounded-2xl shadow-2xl relative overflow-hidden">
+            <div className="flex justify-center lg:justify-end order-1 lg:order-2">
+              <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[400px] lg:h-[400px] xl:w-[450px] xl:h-[450px] rounded-2xl shadow-2xl relative overflow-hidden">
                 <img 
                   src={profileImageSrc} 
                   alt="Sumit Mahankale" 
-                  className="w-full h-full object-cover rounded-1xl"
+                  className="w-full h-full object-cover rounded-2xl"
                 />
-                
-                {/* Decorative elements */}
-              
-                
               </div>
             </div>
           </div>
-          
-          
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className={`py-20 ${darkMode ? 'bg-gray-800 bg-opacity-50' : 'bg-gray-50'}`}>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">About Me</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
+      <section id="about" className={`py-12 sm:py-16 lg:py-20 ${darkMode ? 'bg-gray-800 bg-opacity-50' : 'bg-gray-50'}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">About Me</h2>
+            <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="space-y-6">
-              <p className={`text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+              <p className={`text-base sm:text-lg leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                 I'm a passionate software developer currently pursuing Master's in Computer Applications 
                 from Indira College of Engineering and Management, Pune. With strong foundation in 
                 full-stack development, I create innovative solutions using modern technologies.
               </p>
-              <br></br>
-              <div className="flex flex-wrap gap-4">
-                <a href="mailto:sumitmahankale7@gmail.com" className={`flex items-center gap-2 px-4 py-2 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-md hover:shadow-lg transition-shadow`}>
+              
+              <div className="flex flex-wrap gap-3 sm:gap-4">
+                <a href="mailto:sumitmahankale7@gmail.com" className={`flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-md hover:shadow-lg transition-shadow text-sm sm:text-base`}>
                   <Mail className="w-4 h-4" />
                   Email
                 </a>
-                <a href="https://linkedin.com/in/sumitmahankale" target="_blank" rel="noopener noreferrer" className={`flex items-center gap-2 px-4 py-2 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-md hover:shadow-lg transition-shadow`}>
+                <a href="https://linkedin.com/in/sumitmahankale" target="_blank" rel="noopener noreferrer" className={`flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-md hover:shadow-lg transition-shadow text-sm sm:text-base`}>
                   <Linkedin className="w-4 h-4" />
                   LinkedIn
                 </a>
-                <a href="https://github.com/sumitmahankale" target="_blank" rel="noopener noreferrer" className={`flex items-center gap-2 px-4 py-2 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-md hover:shadow-lg transition-shadow`}>
+                <a href="https://github.com/sumitmahankale" target="_blank" rel="noopener noreferrer" className={`flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-md hover:shadow-lg transition-shadow text-sm sm:text-base`}>
                   <Github className="w-4 h-4" />
                   GitHub
                 </a>
               </div>
             </div>
             
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {stats.map((stat) => (
-                <div key={stat.label} className={`p-6 rounded-xl ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-lg text-center hover:transform hover:scale-105 transition-transform duration-300`}>
+                <div key={stat.label} className={`p-4 sm:p-6 rounded-xl ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-lg text-center hover:transform hover:scale-105 transition-transform duration-300`}>
                   <div className="text-blue-500 mb-2">{stat.icon}</div>
-                  <div className="text-2xl font-bold text-blue-500 mb-1">{stat.value}</div>
-                  <div className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>{stat.label}</div>
+                  <div className="text-xl sm:text-2xl font-bold text-blue-500 mb-1">{stat.value}</div>
+                  <div className={`text-xs sm:text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -358,24 +354,24 @@ const ModernPortfolio = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Experience</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
+      <section id="experience" className="py-12 sm:py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Experience</h2>
+            <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <div className={`p-8 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} shadow-lg hover:shadow-xl transition-shadow duration-300`}>
-              <div className="flex items-start gap-6">
-                <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg">
-                  <Briefcase className="w-6 h-6 text-white" />
+            <div className={`p-6 sm:p-8 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} shadow-lg hover:shadow-xl transition-shadow duration-300`}>
+              <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg shrink-0">
+                  <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">Software Developer Intern</h3>
-                  <p className="text-blue-500 font-semibold mb-1">Techorizon IT Services Pvt Ltd.</p>
-                  <p className={`mb-4 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>September 2023 - December 2023</p>
-                  <p className={`mb-4 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                <div className="flex-1">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2">Software Developer Intern</h3>
+                  <p className="text-blue-500 font-semibold mb-1 text-sm sm:text-base">Techorizon IT Services Pvt Ltd.</p>
+                  <p className={`mb-3 sm:mb-4 text-sm sm:text-base ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>September 2023 - December 2023</p>
+                  <p className={`text-sm sm:text-base leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                     Led development of GRSS Hospital Management Project, gaining experience with enterprise-level 
                     application development and modern web technologies.
                   </p>
@@ -393,25 +389,32 @@ const ModernPortfolio = () => {
       <SkillsSection darkMode={darkMode} />
 
       {/* Education Section */}
-      <section id="education" className={`py-20 ${darkMode ? 'bg-gray-800 bg-opacity-50' : 'bg-gray-50'}`}>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Education</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
+      <section id="education" className={`py-12 sm:py-16 lg:py-20 ${darkMode ? 'bg-gray-800 bg-opacity-50' : 'bg-gray-50'}`}>
+    <div className="max-w-4xl mx-auto flex flex-col gap-6 sm:gap-8">
+
+
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Education</h2>
+            <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
           </div>
           
-          <div className="max-w-4xl mx-auto space-y-6">
+          <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
             {education.map((edu) => (
-              <div key={edu.degree} className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105`}>
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg">
+             <div
+  key={edu.degree}
+  className={`p-4 sm:p-6 my-2 sm:my-4 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.03] will-change-transform`}
+>
+
+                <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
+                  <div className="p-2 sm:p-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg shrink-0">
                     <div className="text-white">{edu.icon}</div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-1">{edu.degree}</h3>
-                    <p className="text-blue-500 font-semibold mb-1">{edu.institution}</p>
-                    <p className={`text-sm mb-2 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>{edu.period}</p>
-                    <p className="text-blue-500 font-semibold">{edu.score}</p>
+              
+                  <div className="flex-1">
+                    <h3 className="text-lg sm:text-xl font-bold mb-1">{edu.degree}</h3>
+                    <p className="text-blue-500 font-semibold mb-1 text-sm sm:text-base">{edu.institution}</p>
+                    <p className={`text-xs sm:text-sm mb-2 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>{edu.period}</p>
+                    <p className="text-blue-500 font-semibold text-sm sm:text-base">{edu.score}</p>
                   </div>
                 </div>
               </div>
@@ -421,45 +424,45 @@ const ModernPortfolio = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
+      <section id="contact" className="py-12 sm:py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" >
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Get In Touch</h2>
+            <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-4 gap-6 mb-12">
-              <a href="mailto:sumitmahankale7@gmail.com" className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} shadow-lg text-center hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105`}>
-                <Mail className="w-8 h-8 text-blue-500 mx-auto mb-3" />
-                <h3 className="font-bold mb-2">Email</h3>
-                <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>sumitmahankale7@gmail.com</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
+              <a href="mailto:sumitmahankale7@gmail.com" className={`p-4 sm:p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} shadow-lg text-center hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105`}>
+                <Mail className="w-6 h-6 sm:w-8 sm:h-8 text-blue-500 mx-auto mb-3" />
+                <h3 className="font-bold mb-2 text-sm sm:text-base">Email</h3>
+                <p className={`text-xs sm:text-sm break-all ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>sumitmahankale7@gmail.com</p>
               </a>
               
-              <a href="https://linkedin.com/in/sumitmahankale" target="_blank" rel="noopener noreferrer" className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} shadow-lg text-center hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105`}>
-                <Linkedin className="w-8 h-8 text-blue-500 mx-auto mb-3" />
-                <h3 className="font-bold mb-2">LinkedIn</h3>
-                <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Connect with me</p>
+              <a href="https://linkedin.com/in/sumitmahankale" target="_blank" rel="noopener noreferrer" className={`p-4 sm:p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} shadow-lg text-center hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105`}>
+                <Linkedin className="w-6 h-6 sm:w-8 sm:h-8 text-blue-500 mx-auto mb-3" />
+                <h3 className="font-bold mb-2 text-sm sm:text-base">LinkedIn</h3>
+                <p className={`text-xs sm:text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Connect with me</p>
               </a>
               
-              <a href="https://github.com/sumitmahankale" target="_blank" rel="noopener noreferrer" className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} shadow-lg text-center hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105`}>
-                <Github className="w-8 h-8 text-blue-500 mx-auto mb-3" />
-                <h3 className="font-bold mb-2">GitHub</h3>
-                <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>View my projects</p>
+              <a href="https://github.com/sumitmahankale" target="_blank" rel="noopener noreferrer" className={`p-4 sm:p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} shadow-lg text-center hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105`}>
+                <Github className="w-6 h-6 sm:w-8 sm:h-8 text-blue-500 mx-auto mb-3" />
+                <h3 className="font-bold mb-2 text-sm sm:text-base">GitHub</h3>
+                <p className={`text-xs sm:text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>View my projects</p>
               </a>
               
-              <div className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} shadow-lg text-center hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105`}>
-                <MapPin className="w-8 h-8 text-blue-500 mx-auto mb-3" />
-                <h3 className="font-bold mb-2">Location</h3>
-                <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Pune, Maharashtra</p>
+              <div className={`p-4 sm:p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} shadow-lg text-center hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105`}>
+                <MapPin className="w-6 h-6 sm:w-8 sm:h-8 text-blue-500 mx-auto mb-3" />
+                <h3 className="font-bold mb-2 text-sm sm:text-base">Location</h3>
+                <p className={`text-xs sm:text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Pune, Maharashtra</p>
               </div>
             </div>
             
             <div className="text-center">
-              <a href="mailto:sumitmahankale7@gmail.com" className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-full font-semibold hover:scale-105 transition-transform">
-                <Mail className="w-5 h-5" />
+              <a href="mailto:sumitmahankale7@gmail.com" className="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:scale-105 transition-transform text-sm sm:text-base">
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                 Let's Start a Conversation
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
             </div>
           </div>
@@ -467,23 +470,23 @@ const ModernPortfolio = () => {
       </section>
 
       {/* Footer */}
-      <footer className={`py-8 border-t ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-gray-50 border-gray-200'}`}>
-        <div className="max-w-7xl mx-auto px-6 text-center">
+      <footer className={`py-6 sm:py-8 border-t ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-gray-50 border-gray-200'}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <div className="mb-4">
-            <CodeLogo size="w-8 h-8 mx-auto" />
+            <CodeLogo size="w-6 h-6 sm:w-8 sm:h-8 mx-auto" />
           </div>
-          <div className="flex justify-center space-x-6 mb-6">
+          <div className="flex justify-center space-x-4 sm:space-x-6 mb-4 sm:mb-6">
             <a href="https://github.com/sumitmahankale" target="_blank" rel="noopener noreferrer" className={`p-2 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-md hover:shadow-lg transition-shadow`}>
-              <Github className="w-5 h-5" />
+              <Github className="w-4 h-4 sm:w-5 sm:h-5" />
             </a>
             <a href="https://linkedin.com/in/sumitmahankale" target="_blank" rel="noopener noreferrer" className={`p-2 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-md hover:shadow-lg transition-shadow`}>
-              <Linkedin className="w-5 h-5" />
+              <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
             </a>
             <a href="mailto:sumitmahankale7@gmail.com" className={`p-2 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-md hover:shadow-lg transition-shadow`}>
-              <Mail className="w-5 h-5" />
+              <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
             </a>
           </div>
-          <p className={`text-sm ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>
+          <p className={`text-xs sm:text-sm ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>
             © 2025 Sumit Mahankale.
           </p>
         </div>

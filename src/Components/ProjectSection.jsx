@@ -6,7 +6,7 @@ import {
 
 const ProjectsSection = ({ darkMode = false }) => {
   // Technology Icons Component with better visibility
-  const TechIcon = ({ name, className = "w-5 h-5" }) => {
+  const TechIcon = ({ name, className = "w-4 h-4 sm:w-5 sm:h-5" }) => {
     const techLogos = {
       'React.js': (
         <svg viewBox="0 0 24 24" className={className} fill="currentColor" style={{ color: '#61DAFB' }}>
@@ -60,10 +60,10 @@ const ProjectsSection = ({ darkMode = false }) => {
       subtitle: "Real-Time Parking Locator",
       description: "A comprehensive parking solution using MERN stack with real-time availability tracking, interactive maps, and seamless user experience for finding and booking parking spots.",
       technologies: ["React.js", "Node.js", "Express.js", "MySQL"],
-      icon: <MapPin className="w-6 h-6" />,
+      icon: <MapPin className="w-5 h-5 sm:w-6 sm:h-6" />,
       githubLink: "https://github.com/sumitmahankale/FindMySpot",
       liveLink: null,
-      backgroundImage: "findmyspot.png", // Placeholder image
+      backgroundImage: "findmyspot.png",
       featured: false,
       stats: { stars: 12, forks: 3 }
     },
@@ -72,98 +72,97 @@ const ProjectsSection = ({ darkMode = false }) => {
       subtitle: "Smart Academic Platform",
       description: "Educational ecosystem with AI-powered chatbots, real-time forums, collaborative learning tools, and comprehensive academic resource management.",
       technologies: ["React.js", "Node.js", "PostgreSQL", "Express.js"],
-      icon: <Globe className="w-6 h-6" />,
+      icon: <Globe className="w-5 h-5 sm:w-6 sm:h-6" />,
       githubLink: "https://github.com/sumitmahankale/EduForum",
       liveLink: null,
-      backgroundImage: "DASHBOARD.jpg", // Placeholder image
+      backgroundImage: "DASHBOARD.jpg",
       featured: false,
       stats: { stars: 8, forks: 2 }
     }
   ];
 
   return (
-    <section id="projects" className={`py-20 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="projects" className={`py-12 sm:py-16 lg:py-20 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className={`text-4xl md:text-5xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             Featured <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Projects</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-4" />
-          <p className={`text-lg max-w-2xl mx-auto ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+          <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-4" />
+          <p className={`text-base sm:text-lg max-w-2xl mx-auto px-4 sm:px-0 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
             Here are some of my recent projects that showcase my skills in full-stack development, 
             problem-solving, and creating user-centric solutions.
           </p>
         </div>
         
         {/* Projects Grid */}
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 sm:gap-8">
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className={`group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-[1.02] ${
+              className={`group relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-[1.02] ${
                 darkMode ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Project Image */}
-              <div className="relative h-56 overflow-hidden">
+              <div className="relative h-48 sm:h-56 overflow-hidden">
                 <img 
                   src={project.backgroundImage} 
                   alt={project.title}
                   className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
-                  style={{ minHeight: '250px', maxHeight: '250px' }}
                 />
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
               </div>
               
               {/* Content */}
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 {/* Project Info */}
-                <div className="mb-6">
-                  <h3 className={`text-2xl font-bold mb-2 transition-colors duration-300 ${
+                <div className="mb-4 sm:mb-6">
+                  <h3 className={`text-xl sm:text-2xl font-bold mb-2 transition-colors duration-300 ${
                     darkMode ? 'text-white group-hover:text-blue-400' : 'text-gray-900 group-hover:text-blue-600'
                   }`}>
                     {project.title}
                   </h3>
-                  <p className="text-blue-500 font-semibold mb-4 text-sm uppercase tracking-wide">
+                  <p className="text-blue-500 font-semibold mb-3 sm:mb-4 text-xs sm:text-sm uppercase tracking-wide">
                     {project.subtitle}
                   </p>
-                  <p className={`leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                  <p className={`leading-relaxed text-sm sm:text-base ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
                     {project.description}
                   </p>
                 </div>
                 
                 {/* Technologies */}
-                <div className="mb-6">
-                  <h4 className={`text-sm font-semibold mb-3 ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
+                <div className="mb-4 sm:mb-6">
+                  <h4 className={`text-xs sm:text-sm font-semibold mb-3 ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
                     Built with:
                   </h4>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 sm:gap-3">
                     {project.technologies.map((tech) => (
                       <div 
                         key={tech} 
-                        className={`flex items-center gap-3 px-4 py-3 rounded-lg border transition-all duration-200 hover:scale-105 ${
+                        className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg border transition-all duration-200 hover:scale-105 ${
                           darkMode 
                             ? 'bg-gray-700 border-gray-600 text-gray-200 hover:bg-gray-600' 
                             : 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100'
                         }`}
                       >
-                        <TechIcon name={tech} className="w-6 h-6 flex-shrink-0" />
-                        <span className="text-sm font-medium">{tech}</span>
+                        <TechIcon name={tech} className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                        <span className="text-xs sm:text-sm font-medium truncate">{tech}</span>
                       </div>
                     ))}
                   </div>
                 </div>
                 
                 {/* Action Buttons */}
-                <div className={`flex gap-3 pt-4 border-t ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}>
+                <div className={`flex flex-col sm:flex-row gap-3 pt-4 border-t ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}>
                   <a 
                     href={project.githubLink} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className={`flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium transition-all duration-200 hover:scale-105 flex-1 justify-center ${
+                    className={`flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium transition-all duration-200 hover:scale-105 flex-1 justify-center text-sm sm:text-base ${
                       darkMode 
                         ? 'bg-gray-700 hover:bg-gray-600 text-gray-200 hover:text-white border border-gray-600' 
                         : 'bg-gray-100 hover:bg-gray-200 text-gray-700 hover:text-gray-900 border border-gray-200'
@@ -178,7 +177,7 @@ const ProjectsSection = ({ darkMode = false }) => {
                       href={project.liveLink} 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-medium hover:scale-105 transition-transform duration-200 flex-1 justify-center"
+                      className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-medium hover:scale-105 transition-transform duration-200 flex-1 justify-center text-sm sm:text-base"
                     >
                       <ExternalLink className="w-4 h-4" />
                       <span>Live Demo</span>
@@ -186,7 +185,7 @@ const ProjectsSection = ({ darkMode = false }) => {
                   ) : (
                     <button 
                       disabled
-                      className={`flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium flex-1 justify-center cursor-not-allowed opacity-50 ${
+                      className={`flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium flex-1 justify-center cursor-not-allowed opacity-50 text-sm sm:text-base ${
                         darkMode ? 'bg-gray-700 text-gray-400' : 'bg-gray-200 text-gray-500'
                       }`}
                     >
@@ -198,22 +197,22 @@ const ProjectsSection = ({ darkMode = false }) => {
               </div>
               
               {/* Hover Effect Border */}
-              <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-blue-500/50 transition-all duration-300 pointer-events-none" />
+              <div className="absolute inset-0 rounded-xl sm:rounded-2xl border-2 border-transparent group-hover:border-blue-500/50 transition-all duration-300 pointer-events-none" />
             </div>
           ))}
         </div>
         
         {/* View More Projects Button */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-8 sm:mt-12">
           <a 
             href="https://github.com/sumitmahankale" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
           >
-            <Github className="w-5 h-5" />
+            <Github className="w-4 h-4 sm:w-5 sm:h-5" />
             View All Projects
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </a>
         </div>
       </div>
