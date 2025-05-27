@@ -1,3 +1,5 @@
+
+import ProjectsSection from './ProjectSection';
 import React, { useState, useEffect } from 'react';
 import { 
   Moon, Sun, Github, Linkedin, Mail, MapPin, ExternalLink, 
@@ -137,32 +139,7 @@ const ModernPortfolio = () => {
     );
   };
 
-  const projects = [
-    {
-      title: "FindMySpot",
-      subtitle: "Real-Time Parking Locator",
-      description: "A comprehensive parking solution using MERN stack with real-time availability tracking and interactive maps.",
-      technologies: ["React.js", "Node.js", "Express.js", "MySQL"],
-      icon: <MapPin className="w-6 h-6" />,
-      link: "https://github.com/sumitmahankale/FindMySpot"
-    },
-    {
-      title: "Splitwise System",
-      subtitle: "Expense Management Platform",
-      description: "A robust expense tracking system built with Spring Boot featuring group expense splitting and secure authentication.",
-      technologies: ["Spring Boot", "MySQL", "HTML5", "CSS3"],
-      icon: <Database className="w-6 h-6" />,
-      link: "https://github.com/sumitmahankale/SplitWise"
-    },
-    {
-      title: "EduForum",
-      subtitle: "Smart Academic Platform",
-      description: "Educational ecosystem with AI-powered chatbots, real-time forums, and collaborative learning tools.",
-      technologies: ["React.js", "Node.js", "PostgreSQL", "Express.js"],
-      icon: <Globe className="w-6 h-6" />,
-      link: "https://github.com/sumitmahankale/EduForum"
-    }
-  ];
+  
 
   const skills = {
     "Backend": { items: ["Java", "Spring Boot", "Node.js", "Express.js"], icon: <Server className="w-6 h-6" /> },
@@ -189,7 +166,7 @@ const ModernPortfolio = () => {
   ];
 
   const stats = [
-    { label: "Projects", value: "3+", icon: <Rocket className="w-6 h-6" /> },
+    { label: "Projects", value: "5+", icon: <Rocket className="w-6 h-6" /> },
     { label: "CGPA", value: "8.77", icon: <Star className="w-6 h-6" /> },
     { label: "Experience", value: "3+ months", icon: <Briefcase className="w-6 h-6" /> },
     { label: "Technologies", value: "10+", icon: <Code className="w-6 h-6" /> }
@@ -322,7 +299,7 @@ const ModernPortfolio = () => {
               <div className="lg:hidden w-24 h-24 mx-auto mb-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
                 <CodeLogo size="w-12 h-12" />
               </div>
-              
+              <h4 className="text-2xl md:text-2xl lg:text-3xl font-semibold mb-2">Hello, i am</h4>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">Sumit Mahankale</h1>
               <div className="text-xl md:text-2xl lg:text-3xl bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent mb-8 font-semibold">
                 Full-Stack Developer
@@ -458,44 +435,7 @@ const ModernPortfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className={`py-20 ${darkMode ? 'bg-gray-800 bg-opacity-50' : 'bg-gray-50'}`}>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
-          </div>
-          
-          <div className="grid lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <div key={project.title} className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105`}>
-                <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg w-fit mb-4">
-                  <div className="text-white">{project.icon}</div>
-                </div>
-                
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-blue-500 font-semibold mb-3">{project.subtitle}</p>
-                <p className={`mb-4 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{project.description}</p>
-                
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <div key={tech} className="flex items-center gap-1">
-                      <TechIcon name={tech} className="w-4 h-4" />
-                      <span className={`text-xs px-2 py-1 rounded ${darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-700'}`}>
-                        {tech}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-                
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className={`flex items-center gap-2 px-4 py-2 rounded-lg ${darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-100 hover:bg-gray-200'} w-fit transition-colors`}>
-                  <Github className="w-4 h-4" />
-                  <span>View Code</span>
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProjectsSection darkMode={darkMode} />
 
       {/* Skills Section */}
       <section id="skills" className="py-20">
