@@ -119,7 +119,7 @@ const ModernPortfolio = () => {
       
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrollY > 50 ? (darkMode ? 'bg-gray-900/95 backdrop-blur border-b border-gray-700' : 'bg-white/95 backdrop-blur border-b border-gray-200') : 'bg-transparent'
+        scrollY > 50 ? (darkMode ? 'bg-gray-900 bg-opacity-95 backdrop-blur border-b border-gray-700' : 'bg-white bg-opacity-95 backdrop-blur border-b border-gray-200') : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
@@ -161,7 +161,7 @@ const ModernPortfolio = () => {
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase() === 'home' ? 'hero' : item.toLowerCase())}
-                  className="block w-full text-left px-4 py-2 hover:bg-blue-500/10 transition-colors"
+                  className="block w-full text-left px-4 py-2 hover:bg-blue-500 hover:bg-opacity-10 transition-colors"
                 >
                   {item}
                 </button>
@@ -217,7 +217,7 @@ const ModernPortfolio = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className={`py-20 ${darkMode ? 'bg-gray-800/50' : 'bg-gray-50'}`}>
+      <section id="about" className={`py-20 ${darkMode ? 'bg-gray-800 bg-opacity-50' : 'bg-gray-50'}`}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">About Me</h2>
@@ -291,7 +291,7 @@ const ModernPortfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className={`py-20 ${darkMode ? 'bg-gray-800/50' : 'bg-gray-50'}`}>
+      <section id="projects" className={`py-20 ${darkMode ? 'bg-gray-800 bg-opacity-50' : 'bg-gray-50'}`}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
@@ -300,7 +300,7 @@ const ModernPortfolio = () => {
           
           <div className="grid lg:grid-cols-3 gap-8">
             {projects.map((project) => (
-              <div key={project.title} className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
+              <div key={project.title} className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg hover:shadow-xl transition-shadow duration-300`}>
                 <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg w-fit mb-4">
                   <div className="text-white">{project.icon}</div>
                 </div>
@@ -320,7 +320,7 @@ const ModernPortfolio = () => {
                   ))}
                 </div>
                 
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className={`flex items-center gap-2 px-4 py-2 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-gray-100'} w-fit`}>
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className={`flex items-center gap-2 px-4 py-2 rounded-lg ${darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-100 hover:bg-gray-200'} w-fit transition-colors`}>
                   <Github className="w-4 h-4" />
                   <span>View Code</span>
                 </a>
@@ -340,7 +340,7 @@ const ModernPortfolio = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {Object.entries(skills).map(([category, data]) => (
-              <div key={category} className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} shadow-lg`}>
+              <div key={category} className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} shadow-lg hover:shadow-xl transition-shadow duration-300`}>
                 <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg w-fit mb-4">
                   <div className="text-white">{data.icon}</div>
                 </div>
@@ -362,7 +362,7 @@ const ModernPortfolio = () => {
       </section>
 
       {/* Education Section */}
-      <section id="education" className={`py-20 ${darkMode ? 'bg-gray-800/50' : 'bg-gray-50'}`}>
+      <section id="education" className={`py-20 ${darkMode ? 'bg-gray-800 bg-opacity-50' : 'bg-gray-50'}`}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Education</h2>
@@ -371,7 +371,7 @@ const ModernPortfolio = () => {
           
           <div className="max-w-4xl mx-auto space-y-6">
             {education.map((edu) => (
-              <div key={edu.degree} className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg`}>
+              <div key={edu.degree} className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg hover:shadow-xl transition-shadow duration-300`}>
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg">
                     <div className="text-white">{edu.icon}</div>
@@ -399,19 +399,19 @@ const ModernPortfolio = () => {
           
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-4 gap-6 mb-12">
-              <a href="mailto:sumitmahankale7@gmail.com" className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} shadow-lg text-center`}>
+              <a href="mailto:sumitmahankale7@gmail.com" className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} shadow-lg text-center hover:shadow-xl transition-shadow duration-300`}>
                 <Mail className="w-8 h-8 text-blue-500 mx-auto mb-3" />
                 <h3 className="font-bold mb-2">Email</h3>
                 <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>sumitmahankale7@gmail.com</p>
               </a>
               
-              <a href="https://linkedin.com/in/sumitmahankale" target="_blank" rel="noopener noreferrer" className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} shadow-lg text-center`}>
+              <a href="https://linkedin.com/in/sumitmahankale" target="_blank" rel="noopener noreferrer" className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} shadow-lg text-center hover:shadow-xl transition-shadow duration-300`}>
                 <Linkedin className="w-8 h-8 text-blue-500 mx-auto mb-3" />
                 <h3 className="font-bold mb-2">LinkedIn</h3>
                 <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Connect with me</p>
               </a>
               
-              <a href="https://github.com/sumitmahankale" target="_blank" rel="noopener noreferrer" className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} shadow-lg text-center`}>
+              <a href="https://github.com/sumitmahankale" target="_blank" rel="noopener noreferrer" className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} shadow-lg text-center hover:shadow-xl transition-shadow duration-300`}>
                 <Github className="w-8 h-8 text-blue-500 mx-auto mb-3" />
                 <h3 className="font-bold mb-2">GitHub</h3>
                 <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>View my projects</p>
@@ -425,7 +425,7 @@ const ModernPortfolio = () => {
             </div>
             
             <div className="text-center">
-              <a href="mailto:sumitmahankale7@gmail.com" className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-full font-semibold">
+              <a href="mailto:sumitmahankale7@gmail.com" className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-full font-semibold hover:scale-105 transition-transform">
                 <Mail className="w-5 h-5" />
                 Let's Start a Conversation
                 <ArrowRight className="w-5 h-5" />
@@ -440,13 +440,13 @@ const ModernPortfolio = () => {
         <div className="max-w-7xl mx-auto px-6 text-center">
           <div className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent mb-4">SM</div>
           <div className="flex justify-center space-x-6 mb-6">
-            <a href="https://github.com/sumitmahankale" target="_blank" rel="noopener noreferrer" className={`p-2 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-md`}>
+            <a href="https://github.com/sumitmahankale" target="_blank" rel="noopener noreferrer" className={`p-2 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-md hover:shadow-lg transition-shadow`}>
               <Github className="w-5 h-5" />
             </a>
-            <a href="https://linkedin.com/in/sumitmahankale" target="_blank" rel="noopener noreferrer" className={`p-2 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-md`}>
+            <a href="https://linkedin.com/in/sumitmahankale" target="_blank" rel="noopener noreferrer" className={`p-2 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-md hover:shadow-lg transition-shadow`}>
               <Linkedin className="w-5 h-5" />
             </a>
-            <a href="mailto:sumitmahankale7@gmail.com" className={`p-2 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-md`}>
+            <a href="mailto:sumitmahankale7@gmail.com" className={`p-2 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-md hover:shadow-lg transition-shadow`}>
               <Mail className="w-5 h-5" />
             </a>
           </div>
