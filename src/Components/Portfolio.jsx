@@ -131,7 +131,7 @@ const ModernPortfolio = () => {
             <div className="flex items-center cursor-pointer" onClick={() => scrollToSection('hero')}>
               <CodeLogo size="w-8 h-8" />
               <span className="ml-3 text-lg font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-                Sumit Mahankale
+               
               </span>
             </div>
             
