@@ -1,4 +1,4 @@
-
+import SkillsSection from './SkillSection';
 import ProjectsSection from './ProjectSection';
 import React, { useState, useEffect } from 'react';
 import { 
@@ -139,14 +139,6 @@ const ModernPortfolio = () => {
     );
   };
 
-  
-
-  const skills = {
-    "Backend": { items: ["Java", "Spring Boot", "Node.js", "Express.js"], icon: <Server className="w-6 h-6" /> },
-    "Frontend": { items: ["React.js", "JavaScript", "HTML5", "CSS3"], icon: <Globe className="w-6 h-6" /> },
-    "Database": { items: ["MySQL", "PostgreSQL", "MongoDB"], icon: <Database className="w-6 h-6" /> },
-    "Tools": { items: ["Git", "GitHub"], icon: <Code className="w-6 h-6" /> }
-  };
 
   const education = [
     {
@@ -438,35 +430,7 @@ const ModernPortfolio = () => {
       <ProjectsSection darkMode={darkMode} />
 
       {/* Skills Section */}
-      <section id="skills" className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Technical Skills</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full" />
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {Object.entries(skills).map(([category, data]) => (
-              <div key={category} className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105`}>
-                <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg w-fit mb-4">
-                  <div className="text-white">{data.icon}</div>
-                </div>
-                <h3 className="text-lg font-bold mb-4">{category}</h3>
-                <div className="space-y-3">
-                  {data.items.map((skill) => (
-                    <div key={skill} className="flex items-center gap-3">
-                      <TechIcon name={skill} className="w-6 h-6" />
-                      <span className={`px-3 py-1 rounded text-sm font-medium ${darkMode ? 'bg-gray-700 text-gray-300' : 'bg-white text-gray-700'} shadow-sm`}>
-                        {skill}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <SkillsSection darkMode={darkMode} />
 
       {/* Education Section */}
       <section id="education" className={`py-20 ${darkMode ? 'bg-gray-800 bg-opacity-50' : 'bg-gray-50'}`}>
