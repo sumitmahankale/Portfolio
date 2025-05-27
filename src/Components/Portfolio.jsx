@@ -439,7 +439,7 @@ const ModernPortfolio = () => {
                 <p className={`text-xs sm:text-sm break-all ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>sumitmahankale7@gmail.com</p>
               </a>
               
-              <a href="https://linkedin.com/in/sumitmahankale" target="_blank" rel="noopener noreferrer" className={`p-4 sm:p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} shadow-lg text-center hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105`}>
+              <a href="https://www.linkedin.com/in/sumit-mahankale-3885aa277/" target="_blank" rel="noopener noreferrer" className={`p-4 sm:p-6 rounded-xl ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} shadow-lg text-center hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105`}>
                 <Linkedin className="w-6 h-6 sm:w-8 sm:h-8 text-blue-500 mx-auto mb-3" />
                 <h3 className="font-bold mb-2 text-sm sm:text-base">LinkedIn</h3>
                 <p className={`text-xs sm:text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>Connect with me</p>
@@ -475,17 +475,7 @@ const ModernPortfolio = () => {
           <div className="mb-4">
             <CodeLogo size="w-6 h-6 sm:w-8 sm:h-8 mx-auto" />
           </div>
-          <div className="flex justify-center space-x-4 sm:space-x-6 mb-4 sm:mb-6">
-            <a href="https://github.com/sumitmahankale" target="_blank" rel="noopener noreferrer" className={`p-2 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-md hover:shadow-lg transition-shadow`}>
-              <Github className="w-4 h-4 sm:w-5 sm:h-5" />
-            </a>
-            <a href="https://linkedin.com/in/sumitmahankale" target="_blank" rel="noopener noreferrer" className={`p-2 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-md hover:shadow-lg transition-shadow`}>
-              <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
-            </a>
-            <a href="mailto:sumitmahankale7@gmail.com" className={`p-2 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-md hover:shadow-lg transition-shadow`}>
-              <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
-            </a>
-          </div>
+          
           <p className={`text-xs sm:text-sm ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>
             © 2025 Sumit Mahankale.
           </p>
