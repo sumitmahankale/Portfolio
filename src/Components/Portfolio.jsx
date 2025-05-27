@@ -199,56 +199,115 @@ const ModernPortfolio = () => {
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
       
       {/* Fixed Navigation */}
+      {/* Fixed Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        darkMode ? 'bg-gray-900 bg-opacity-95 backdrop-blur border-b border-gray-700' : 'bg-white bg-opacity-95 backdrop-blur border-b border-gray-200'
+        scrollY > 50
+          ? darkMode 
+            ? 'bg-gray-900 bg-opacity-98 backdrop-blur-md shadow-lg border-b border-gray-700' 
+            : 'bg-white bg-opacity-98 backdrop-blur-md shadow-lg border-b border-gray-200'
+          : darkMode
+            ? 'bg-gray-900 bg-opacity-90 backdrop-blur-sm border-b border-gray-800'
+            : 'bg-white bg-opacity-90 backdrop-blur-sm border-b border-gray-100'
       }`}>
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center">
-              <CodeLogo size="w-10 h-10" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            {/* Logo */}
+            <div className="flex items-center cursor-pointer" onClick={() => scrollToSection('hero')}>
+              <CodeLogo size="w-8 h-8" />
+              <span className="ml-3 text-lg font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+                Sumit Mahankale
+              </span>
             </div>
             
-            <div className="hidden md:flex space-x-6">
-              {['Home', 'About', 'Experience', 'Projects', 'Skills', 'Education', 'Contact'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase() === 'home' ? 'hero' : item.toLowerCase())}
-                  className={`transition-colors duration-200 ${
-                    activeSection === (item.toLowerCase() === 'home' ? 'hero' : item.toLowerCase())
-                      ? 'text-blue-500 font-semibold'
-                      : darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
-                  }`}
-                >
-                  {item}
-                </button>
-              ))}
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-1">
+              {['Home', 'About', 'Experience', 'Projects', 'Skills', 'Education', 'Contact'].map((item) => {
+                const sectionId = item.toLowerCase() === 'home' ? 'hero' : item.toLowerCase();
+                const isActive = activeSection === sectionId;
+                
+                return (
+                  <button
+                    key={item}
+                    onClick={() => scrollToSection(sectionId)}
+                    className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                      isActive
+                        ? 'text-blue-500'
+                        : darkMode 
+                          ? 'text-gray-300 hover:text-white hover:bg-gray-800' 
+                          : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                    }`}
+                  >
+                    {item}
+                    {isActive && (
+                      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-blue-500 rounded-full" />
+                    )}
+                  </button>
+                );
+              })}
             </div>
             
-            <div className="flex items-center space-x-4">
+            {/* Right Side Actions */}
+            <div className="flex items-center space-x-3">
+              {/* Theme Toggle */}
               <button
                 onClick={() => setDarkMode(!darkMode)}
-                className={`p-2 rounded-lg transition-colors ${darkMode ? 'bg-gray-800 text-yellow-400' : 'bg-gray-100 text-gray-600'}`}
+                className={`p-2 rounded-lg transition-all duration-200 ${
+                  darkMode 
+                    ? 'bg-gray-800 text-yellow-400 hover:bg-gray-700' 
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+                aria-label="Toggle theme"
               >
-                {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
               </button>
               
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2">
-                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {/* Mobile Menu Button */}
+              <button 
+                onClick={() => setIsMenuOpen(!isMenuOpen)} 
+                className={`md:hidden p-2 rounded-lg transition-colors ${
+                  darkMode 
+                    ? 'text-gray-300 hover:text-white hover:bg-gray-800' 
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                }`}
+                aria-label="Toggle menu"
+              >
+                {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
           </div>
           
+          {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className={`md:hidden mt-4 py-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
-              {['Home', 'About', 'Experience', 'Projects', 'Skills', 'Education', 'Contact'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase() === 'home' ? 'hero' : item.toLowerCase())}
-                  className="block w-full text-left px-4 py-2 hover:bg-blue-500 hover:bg-opacity-10 transition-colors"
-                >
-                  {item}
-                </button>
-              ))}
+            <div className={`md:hidden absolute top-full left-0 right-0 mt-1 mx-4 rounded-lg shadow-lg border transition-all duration-200 ${
+              darkMode 
+                ? 'bg-gray-800 border-gray-700' 
+                : 'bg-white border-gray-200'
+            }`}>
+              <div className="py-2">
+                {['Home', 'About', 'Experience', 'Projects', 'Skills', 'Education', 'Contact'].map((item) => {
+                  const sectionId = item.toLowerCase() === 'home' ? 'hero' : item.toLowerCase();
+                  const isActive = activeSection === sectionId;
+                  
+                  return (
+                    <button
+                      key={item}
+                      onClick={() => scrollToSection(sectionId)}
+                      className={`block w-full text-left px-4 py-3 text-sm font-medium transition-all duration-200 ${
+                        isActive
+                          ? 'text-blue-500 bg-blue-50 dark:bg-blue-900 dark:bg-opacity-20'
+                          : darkMode
+                            ? 'text-gray-300 hover:text-white hover:bg-gray-700'
+                            : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                      }`}
+                    >
+                      <div className="flex items-center">
+                        {isActive && <div className="w-1 h-1 bg-blue-500 rounded-full mr-3" />}
+                        {item}
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           )}
         </div>
