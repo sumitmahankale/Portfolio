@@ -560,7 +560,7 @@ const ModernPortfolio = () => {
             </a>
           </div>
           <p className={`text-sm ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>
-            © 2024 Sumit Mahankale. Built with React and Tailwind CSS.
+            © 2025 Sumit Mahankale.
           </p>
         </div>
       </footer>
