@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   Moon, Sun, Github, Linkedin, Mail, MapPin, ExternalLink, 
   Award, Briefcase, GraduationCap, Code, Database, Globe, Server,
-  Star, Rocket, ChevronDown, Menu, X, ArrowRight
+  Star, Rocket, ChevronDown, Menu, X, ArrowRight, Twitter, Instagram
 } from 'lucide-react';
 
 const ModernPortfolio = () => {
@@ -82,6 +82,34 @@ const ModernPortfolio = () => {
     { label: " Current CGPA", value: "8.77", icon: <Star className="w-6 h-6" /> },
     { label: "Experience", value: "3+ months", icon: <Briefcase className="w-6 h-6" /> },
     { label: "Technologies", value: "10+", icon: <Code className="w-6 h-6" /> }
+  ];
+
+  // Social media links - you can update these later
+  const socialLinks = [
+    {
+      name: 'LinkedIn',
+      icon: <Linkedin className="w-5 h-5" />,
+      url: 'https://www.linkedin.com/in/sumit-mahankale-3885aa277/', // Update this
+      color: 'hover:text-blue-600'
+    },
+    {
+      name: 'GitHub',
+      icon: <Github className="w-5 h-5" />,
+      url: 'https://github.com/sumitmahankale', // Update this
+      color: 'hover:text-gray-600'
+    },
+    {
+      name: 'Twitter',
+      icon: <Twitter className="w-5 h-5" />,
+      url: 'https://twitter.com/sumitmahankale', // Update this
+      color: 'hover:text-blue-400'
+    },
+    {
+      name: 'Instagram',
+      icon: <Instagram className="w-5 h-5" />,
+      url: 'https://instagram.com/yourhandle', // Update this
+      color: 'hover:text-pink-500'
+    }
   ];
 
   return (
@@ -221,7 +249,7 @@ const ModernPortfolio = () => {
                 Specializing in full-stack development with MERN and Spring Boot.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-16">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
                 <button 
                   onClick={() => scrollToSection('projects')}
                   className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-full transition-transform hover:scale-105"
@@ -241,6 +269,26 @@ const ModernPortfolio = () => {
                     Get In Touch
                   </span>
                 </button>
+              </div>
+
+              {/* Social Media Icons */}
+              <div className="flex gap-4 justify-center lg:justify-start mb-16">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`p-3 rounded-full transition-all duration-300 transform hover:scale-110 ${
+                      darkMode 
+                        ? 'bg-gray-800 text-gray-400 hover:bg-gray-700' 
+                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    } ${social.color} shadow-lg hover:shadow-xl`}
+                    aria-label={`Visit my ${social.name} profile`}
+                  >
+                    {social.icon}
+                  </a>
+                ))}
               </div>
             </div>
             
