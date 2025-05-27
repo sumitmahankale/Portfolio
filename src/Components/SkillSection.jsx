@@ -240,53 +240,7 @@ const SkillsSection = ({ darkMode = false }) => {
         </div>
 
         {/* Skills Summary */}
-        <div className={`
-          relative p-8 rounded-2xl text-center overflow-hidden
-          ${darkMode 
-            ? 'bg-gradient-to-br from-gray-800 via-gray-800 to-gray-700 border border-gray-600' 
-            : 'bg-gradient-to-br from-white via-gray-50 to-white border border-gray-200'
-          }
-          shadow-2xl
-        `}>
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute top-4 left-4 w-20 h-20 bg-blue-500 rounded-full"></div>
-            <div className="absolute bottom-4 right-4 w-16 h-16 bg-purple-500 rounded-full"></div>
-            <div className="absolute top-1/2 left-1/3 w-12 h-12 bg-green-500 rounded-full"></div>
-          </div>
-          
-          <div className="relative z-10">
-            <h3 className={`text-2xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-              Full-Stack Developer
-            </h3>
-            
-            <p className={`text-lg mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              Passionate about creating robust backend systems and intuitive user interfaces
-            </p>
-            
-            {/* Tech Categories */}
-            <div className="flex flex-wrap justify-center gap-4">
-              {['Frontend', 'Backend', 'Database', 'Tools'].map((category, index) => (
-                <div
-                  key={category}
-                  className={`
-                    px-4 py-2 rounded-full text-sm font-medium
-                    ${darkMode 
-                      ? 'bg-gray-700 text-gray-200' 
-                      : 'bg-gray-100 text-gray-700'
-                    }
-                    hover:scale-105 transition-transform duration-300 cursor-pointer
-                  `}
-                  style={{
-                    animationDelay: `${index * 0.2}s`
-                  }}
-                >
-                  {category}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+   
       </div>
 
       {/* Custom Styles */}
