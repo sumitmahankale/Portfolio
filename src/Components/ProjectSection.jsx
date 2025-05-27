@@ -107,7 +107,7 @@ const ProjectsSection = ({ darkMode = false }) => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Project Image */}
-              <div className="relative h-48 sm:h-56 overflow-hidden">
+              <div className="relative h-50 sm:h-66 overflow-hidden">
                 <img 
                   src={project.backgroundImage} 
                   alt={project.title}
