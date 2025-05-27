@@ -146,8 +146,8 @@ const SkillsSection = ({ darkMode }) => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-3 mb-4">
-            <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg">
-              <Code className="w-6 h-6 text-white" />
+            <div className="p-2 bg-gradient-to-r ">
+             
             </div>
             <h2 className="text-4xl font-bold">Technical Skills</h2>
           </div>
