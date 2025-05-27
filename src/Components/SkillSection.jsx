@@ -197,13 +197,7 @@ const SkillsSection = ({ darkMode = false }) => {
   return (
     <section id="skills" className="py-20 relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0">
-        <FloatingTech delay={0} className="top-10 left-10" />
-        <FloatingTech delay={1} className="top-20 right-20" />
-        <FloatingTech delay={2} className="bottom-32 left-1/4" />
-        <FloatingTech delay={0.5} className="bottom-20 right-10" />
-        <FloatingTech delay={1.5} className="top-1/2 right-1/3" />
-      </div>
+      
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header */}
