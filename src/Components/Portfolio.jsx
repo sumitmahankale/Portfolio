@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   Moon, Sun, Github, Linkedin, Mail, MapPin, ExternalLink, 
   Award, Briefcase, GraduationCap, Code, Database, Globe, Server,
-  Star, Rocket, ChevronDown, Menu, X, ArrowRight, Camera, Upload
+  Star, Rocket, ChevronDown, Menu, X, ArrowRight
 } from 'lucide-react';
 
 const ModernPortfolio = () => {
@@ -12,7 +12,9 @@ const ModernPortfolio = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-  const [profileImage, setProfileImage] = useState(null);
+  
+  // Update this path to your actual image file
+  const profileImageSrc = "Sumit.png"; // Change this to your image path
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,17 +39,6 @@ const ModernPortfolio = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setIsMenuOpen(false);
-    }
-  };
-
-  const handleImageUpload = (event) => {
-    const file = event.target.files[0];
-    if (file && file.type.startsWith('image/')) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        setProfileImage(e.target.result);
-      };
-      reader.readAsDataURL(file);
     }
   };
 
@@ -210,7 +201,7 @@ const ModernPortfolio = () => {
         </div>
       </nav>
 
-      {/* Hero Section with Photo Space */}
+      {/* Hero Section with Profile Photo */}
       <section id="hero" className="min-h-screen flex items-center justify-center pt-20">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -253,51 +244,23 @@ const ModernPortfolio = () => {
               </div>
             </div>
             
-            {/* Right Side - Photo Space */}
+            {/* Right Side - Profile Photo */}
             <div className="flex justify-center lg:justify-end">
-              <div className={`w-80 h-80 lg:w-96 lg:h-96 rounded-2xl ${darkMode ? 'bg-gray-800' : 'bg-gray-100'} flex items-center justify-center shadow-2xl relative overflow-hidden group`}>
-                {profileImage ? (
-                  <img 
-                    src={profileImage} 
-                    alt="Sumit Mahankale" 
-                    className="w-full h-full object-cover rounded-2xl"
-                  />
-                ) : (
-                  <div className="text-center">
-                    <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                      <Camera className="w-10 h-10 text-white" />
-                    </div>
-                    <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                      Upload Your Photo
-                    </p>
-                  </div>
-                )}
-                
-                {/* Upload overlay */}
-                <div className={`absolute inset-0 ${darkMode ? 'bg-gray-900' : 'bg-black'} bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl`}>
-                  <label className="cursor-pointer flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-                    <Upload className="w-4 h-4" />
-                    {profileImage ? 'Change Photo' : 'Upload Photo'}
-                    <input 
-                      type="file" 
-                      accept="E:\Projects\Portfolio\public\Sumit.png" 
-                      onChange={handleImageUpload}
-                      className="hidden" 
-                    />
-                  </label>
-                </div>
+              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-2xl shadow-2xl relative overflow-hidden">
+                <img 
+                  src={profileImageSrc} 
+                  alt="Sumit Mahankale" 
+                  className="w-full h-full object-cover rounded-2xl"
+                />
                 
                 {/* Decorative elements */}
-                <div className="absolute top-4 right-4 w-4 h-4 bg-blue-500 rounded-full animate-pulse"></div>
-                <div className="absolute bottom-4 left-4 w-6 h-6 bg-purple-500 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                <div className="absolute top-1/2 left-4 w-2 h-2 bg-green-500 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+              
+                
               </div>
             </div>
           </div>
           
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <ChevronDown className="w-6 h-6 text-blue-500" />
-          </div>
+          
         </div>
       </section>
 
