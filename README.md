@@ -27,7 +27,7 @@ https://portfolio-pearl-nu-15.vercel.app/
 - **Frontend**: React.js, JavaScript (ES6+)  
 - **Styling**: Tailwind CSS  
 - **Icons**: Lucide React  
-- **Deployment**: [Your deployment platform]  
+- **Deployment**: [Vercel]  
 
 ## Project Structure
 
