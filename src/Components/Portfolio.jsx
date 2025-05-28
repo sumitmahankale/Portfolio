@@ -234,7 +234,7 @@ EXTRA-CURRICULAR
             </div>
             
             {/* Right Side Actions */}
-            <div className="flex items-center space-x-2 sm:space-x-3">
+            <div className="flex items-center gap-4 sm:gap-5">
               {/* Download Resume Button */}
               <button
                 onClick={downloadResume}
@@ -392,7 +392,6 @@ EXTRA-CURRICULAR
           </div>
         </div>
       </section>
-
       {/* About Section */}
       <section id="about" className={`py-12 sm:py-16 lg:py-20 ${darkMode ? 'bg-gray-800 bg-opacity-50' : 'bg-gray-50'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
