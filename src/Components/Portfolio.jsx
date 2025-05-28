@@ -1,10 +1,11 @@
+
 import SkillsSection from './SkillSection';
 import ProjectsSection from './ProjectSection';
 import React, { useState, useEffect } from 'react';
 import { 
   Moon, Sun, Github, Linkedin, Mail, MapPin, ExternalLink, 
   Award, Briefcase, GraduationCap, Code, Database, Globe, Server,
-  Star, Rocket, ChevronDown, Menu, X, ArrowRight, Twitter, Instagram
+  Star, Rocket, ChevronDown, Menu, X, ArrowRight, Twitter, Instagram, Download
 } from 'lucide-react';
 
 const ModernPortfolio = () => {
@@ -40,6 +41,76 @@ const ModernPortfolio = () => {
       element.scrollIntoView({ behavior: 'smooth' });
       setIsMenuOpen(false);
     }
+  };
+
+  // Download Resume Function
+  const downloadResume = () => {
+    // Create resume content as text
+    const resumeContent = `
+SUMIT MAHANKALE
++91-8208367017 | sumitmahankale7@gmail.com
+LinkedIn: https://www.linkedin.com/in/sumit-mahankale-3885aa277/
+GitHub: https://github.com/sumitmahankale
+Talegaon-dabhade, Pune-410506
+
+INTERNSHIP
+Software Developer                                                    09/2023 – 12/2023
+Techorizon IT Services Pvt Ltd.
+• Contributed to the development of the GRSS Hospital Management Project, gaining valuable hands-on experience with front-end technologies.
+• Collaborated with the development team to implement user interface enhancements.
+• Utilized front-end technologies to improve the project's usability and aesthetics.
+
+EDUCATION
+MCA                                                                   08/2024 – Present
+Indira College of Engineering and Management Pune
+• CGPA (Sem-I): 8.77/10
+
+Computer Application                                                  08/2020 – 04/2023
+Pratibha College of Computer Studies Pune
+• CGPA: 7.77/10
+
+HSC                                                                   2020
+Prerna Junior College Pune
+• Marks: 52%
+
+SSC                                                                   2018
+Sant Tukaram Vidyalaya Pune
+• Marks: 79.80%
+
+SKILLS
+Backend: OOPs, Node.js, Express, Java, Spring Boot, Hibernate
+Frontend: HTML, CSS, JavaScript, React, Bootstrap
+Database: MongoDB, MySQL
+Tools: Git, Postman, Eclipse IDEA, STS IDEA
+
+PROJECTS
+FindMySpot: Real-Time Parking Locator
+• Developed a real-time parking locator using MERN stack, Leaflet, and Google Maps. Enabled users to find and book nearby parking spots with authentication and interactive maps.
+• Technologies: React.js, Node.js, Express.js, MySQL, Leaflet, Google Maps, Git
+
+Snappy-ChatApp: Real-Time Chat Application
+• Built a real-time chat application using MERN stack with Socket.io for instant messaging. Implemented user authentication, one-to-one and group chats, message notifications, and media sharing.
+• Technologies: React.js, Node.js, Express.js, MongoDB, Socket.io, Redux, Git
+
+EduForum: Smart Academic Forum & Chatbot System
+• Engineered an educational platform with AI-powered chatbot, real-time forums, and department-specific notice boards for seamless academic communication.
+• Technologies: React.js, Node.js, Express.js, PostgreSQL, Git
+
+EXTRA-CURRICULAR
+• Published a research paper titled "The Impact of Smart Parking Systems on Urban Traffic Congestion: A Comprehensive Analysis" – focused on evaluating the role of smart parking in reducing city traffic.
+• Lead Coordinator for Tekskhetra 2025 – managed and organized multiple inter-college technical events with a team of 20+ volunteers.
+    `;
+
+    // Create and download the file
+    const blob = new Blob([resumeContent], { type: 'text/plain' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'Sumit_Mahankale_Resume.txt';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
   };
 
   // Creative Code Logo Component
@@ -164,6 +235,20 @@ const ModernPortfolio = () => {
             
             {/* Right Side Actions */}
             <div className="flex items-center space-x-2 sm:space-x-3">
+              {/* Download Resume Button */}
+              <button
+                onClick={downloadResume}
+                className={`p-1.5 sm:p-2 rounded-lg transition-all duration-200 ${
+                  darkMode 
+                    ? 'bg-gray-800 text-blue-400 hover:bg-gray-700 hover:text-blue-300' 
+                    : 'bg-gray-100 text-blue-600 hover:bg-gray-200 hover:text-blue-700'
+                }`}
+                aria-label="Download resume"
+                title="Download Resume"
+              >
+                <Download className="w-4 h-4" />
+              </button>
+              
               {/* Theme Toggle */}
               <button
                 onClick={() => setDarkMode(!darkMode)}
