@@ -43,75 +43,248 @@ const ModernPortfolio = () => {
     }
   };
 
-  // Download Resume Function
-  const downloadResume = () => {
-    // Create resume content as text
-    const resumeContent = `
-SUMIT MAHANKALE
-+91-8208367017 | sumitmahankale7@gmail.com
-LinkedIn: https://www.linkedin.com/in/sumit-mahankale-3885aa277/
-GitHub: https://github.com/sumitmahankale
-Talegaon-dabhade, Pune-410506
+  // Fixed Download Resume Function
+  // Single Page Resume PDF Generator
+const downloadResume = async () => {
+  try {
+    // Load jsPDF script dynamically
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+    document.head.appendChild(script);
+    
+    await new Promise((resolve) => {
+      script.onload = resolve;
+    });
+    
+    // Now access jsPDF from the global window object
+    const { jsPDF } = window.jspdf;
+    
+    const doc = new jsPDF('p', 'mm', 'a4');
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const margin = 15; // Reduced margin
+    const contentWidth = pageWidth - (2 * margin);
+    let yPosition = margin;
 
-INTERNSHIP
-Software Developer                                                    09/2023 – 12/2023
-Techorizon IT Services Pvt Ltd.
-• Contributed to the development of the GRSS Hospital Management Project, gaining valuable hands-on experience with front-end technologies.
-• Collaborated with the development team to implement user interface enhancements.
-• Utilized front-end technologies to improve the project's usability and aesthetics.
+    // Helper function to add text with word wrapping
+    const addText = (text, x, y, fontSize = 9, fontStyle = 'normal', maxWidth = contentWidth) => {
+      doc.setFontSize(fontSize);
+      doc.setFont('helvetica', fontStyle);
+      const lines = doc.splitTextToSize(text, maxWidth);
+      doc.text(lines, x, y);
+      return y + (lines.length * fontSize * 0.4); // Better line spacing
+    };
 
-EDUCATION
-MCA                                                                   08/2024 – Present
-Indira College of Engineering and Management Pune
-• CGPA (Sem-I): 8.77/10
+    // Helper function to add a horizontal line
+    const addLine = (y, thickness = 0.4) => {
+      doc.setLineWidth(thickness);
+      doc.setDrawColor(100, 100, 100); // Light gray for better appearance
+      doc.line(margin, y, pageWidth - margin, y);
+      return y + 3; // Better spacing after line
+    };
 
-Computer Application                                                  08/2020 – 04/2023
-Pratibha College of Computer Studies Pune
-• CGPA: 7.77/10
+    // Header - Name and Contact
+    doc.setTextColor(0, 0, 0);
+    yPosition = addText('Sumit Mahankale', margin, yPosition, 18, 'bold'); // Increased size
+    yPosition += 2; // Better spacing
+    
+    // Contact info line
+    doc.setFontSize(9);
+    const contactInfo = '+91-8208367017 | sumitmahankale7@gmail.com | LinkedIn | GitHub';
+    doc.text(contactInfo, margin, yPosition);
+    yPosition += 5; // Better spacing
+    
+    // Address
+    doc.text('Talegaon-dabhade, Pune-410506', margin, yPosition);
+    yPosition += 8; // Better spacing
 
-HSC                                                                   2020
-Prerna Junior College Pune
-• Marks: 52%
+    // Internship Section
+    doc.setFontSize(13);
+    doc.setFont('helvetica', 'bold');
+    doc.text('INTERNSHIP', margin, yPosition);
+    yPosition = addLine(yPosition + 2);
+    
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Software Developer', margin, yPosition);
+    
+    // Right align the dates
+    doc.setFont('helvetica', 'normal');
+    doc.text('Sep 2023 – Dec 2023', pageWidth - margin - 35, yPosition);
+    yPosition += 4; // Better spacing
+    
+    doc.setFont('helvetica', 'italic');
+    doc.setFontSize(9);
+    doc.text('Techorizon IT Services Pvt Ltd.', margin, yPosition);
+    yPosition += 4; // Better spacing
+    
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(9);
+    yPosition = addText('• Contributed to the development of the GRSS Hospital Management Project, gaining hands-on experience with front-end technologies.', margin + 5, yPosition, 9);
+    yPosition = addText('• Collaborated with the development team to implement user interface enhancements and utilized front-end technologies.', margin + 5, yPosition + 1, 9);
+    yPosition += 6;
 
-SSC                                                                   2018
-Sant Tukaram Vidyalaya Pune
-• Marks: 79.80%
+    // Education Section
+    doc.setFontSize(13);
+    doc.setFont('helvetica', 'bold');
+    doc.text('EDUCATION', margin, yPosition);
+    yPosition = addLine(yPosition + 2);
+    
+    // MCA
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Master of Computer Applications (MCA)', margin, yPosition);
+    doc.setFont('helvetica', 'normal');
+    doc.text('Aug 2024 – Present', pageWidth - margin - 35, yPosition);
+    yPosition += 4;
+    
+    doc.setFont('helvetica', 'italic');
+    doc.setFontSize(9);
+    doc.text('Indira College of Engineering and Management, Pune', margin, yPosition);
+    yPosition += 3;
+    
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(9);
+    doc.text('• CGPA (Sem-I): 8.77/10', margin + 5, yPosition);
+    yPosition += 5;
+    
+    // BCA
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Bachelor of Computer Applications (BCA)', margin, yPosition);
+    doc.setFont('helvetica', 'normal');
+    doc.text('Aug 2020 – Apr 2023', pageWidth - margin - 35, yPosition);
+    yPosition += 4;
+    
+    doc.setFont('helvetica', 'italic');
+    doc.setFontSize(9);
+    doc.text('Pratibha College of Computer Studies, Pune', margin, yPosition);
+    yPosition += 3;
+    
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(9);
+    doc.text('• CGPA: 7.77/10', margin + 5, yPosition);
+    yPosition += 5;
+    
+    // HSC & SSC 
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Higher Secondary Certificate (HSC)', margin, yPosition);
+    doc.setFont('helvetica', 'normal');
+    doc.text('2020', pageWidth - margin - 20, yPosition);
+    yPosition += 3;
+    doc.setFont('helvetica', 'italic');
+    doc.setFontSize(9);
+    doc.text('Prerna Junior College, Pune • Marks: 52%', margin, yPosition);
+    yPosition += 4;
+    
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Secondary School Certificate (SSC)', margin, yPosition);
+    doc.setFont('helvetica', 'normal');
+    doc.text('2018', pageWidth - margin - 20, yPosition);
+    yPosition += 3;
+    doc.setFont('helvetica', 'italic');
+    doc.setFontSize(9);
+    doc.text('Sant Tukaram Vidyalaya, Pune • Marks: 79.80%', margin, yPosition);
+    yPosition += 7;
 
-SKILLS
-Backend: OOPs, Node.js, Express, Java, Spring Boot, Hibernate
-Frontend: HTML, CSS, JavaScript, React, Bootstrap
-Database: MongoDB, MySQL
-Tools: Git, Postman, Eclipse IDEA, STS IDEA
+    // Skills Section
+    doc.setFontSize(13);
+    doc.setFont('helvetica', 'bold');
+    doc.text('TECHNICAL SKILLS', margin, yPosition);
+    yPosition = addLine(yPosition + 2);
+    
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'bold');
+    
+    // All skills in organized format
+    doc.text('Backend:', margin, yPosition);
+    doc.setFont('helvetica', 'normal');
+    doc.text('OOPs, Node.js, Express, Java, Spring Boot, Hibernate', margin + 25, yPosition);
+    yPosition += 4;
+    
+    doc.setFont('helvetica', 'bold');
+    doc.text('Frontend:', margin, yPosition);
+    doc.setFont('helvetica', 'normal');
+    doc.text('HTML, CSS, JavaScript, React, Bootstrap', margin + 25, yPosition);
+    yPosition += 4;
+    
+    doc.setFont('helvetica', 'bold');
+    doc.text('Database:', margin, yPosition);
+    doc.setFont('helvetica', 'normal');
+    doc.text('MongoDB, MySQL', margin + 25, yPosition);
+    yPosition += 4;
+    
+    doc.setFont('helvetica', 'bold');
+    doc.text('Tools:', margin, yPosition);
+    doc.setFont('helvetica', 'normal');
+    doc.text('Git, Postman, Eclipse IDE, Spring Tool Suite', margin + 25, yPosition);
+    yPosition += 7;
 
-PROJECTS
-FindMySpot: Real-Time Parking Locator
-• Developed a real-time parking locator using MERN stack, Leaflet, and Google Maps. Enabled users to find and book nearby parking spots with authentication and interactive maps.
-• Technologies: React.js, Node.js, Express.js, MySQL, Leaflet, Google Maps, Git
+    // Projects Section
+    doc.setFontSize(13);
+    doc.setFont('helvetica', 'bold');
+    doc.text('PROJECTS', margin, yPosition);
+    yPosition = addLine(yPosition + 2);
+    
+    // Project 1
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'bold');
+    doc.text('FindMySpot: Real-Time Parking Locator', margin, yPosition);
+    yPosition += 4;
+    
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'normal');
+    yPosition = addText('• Real-time parking locator using MERN stack, Leaflet, and Google Maps with user authentication and interactive booking.', margin + 5, yPosition, 9);
+    yPosition = addText('• Technologies: React.js, Node.js, Express.js, MySQL, Leaflet, Google Maps, Git', margin + 5, yPosition + 1, 9);
+    yPosition += 4;
+    
+    // Project 2
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Snappy-ChatApp: Real-Time Chat Application', margin, yPosition);
+    yPosition += 4;
+    
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'normal');
+    yPosition = addText('• Real-time chat application with Socket.io, user authentication, group chats, and media sharing capabilities.', margin + 5, yPosition, 9);
+    yPosition = addText('• Technologies: React.js, Node.js, Express.js, MongoDB, Socket.io, Redux, Git', margin + 5, yPosition + 1, 9);
+    yPosition += 4;
+    
+    // Project 3
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'bold');
+    doc.text('EduForum: Smart Academic Forum & Chatbot System', margin, yPosition);
+    yPosition += 4;
+    
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'normal');
+    yPosition = addText('• Educational platform with AI-powered chatbot, real-time forums, and department-specific notice boards.', margin + 5, yPosition, 9);
+    yPosition = addText('• Technologies: React.js, Node.js, Express.js, PostgreSQL, Git', margin + 5, yPosition + 1, 9);
+    yPosition += 6;
 
-Snappy-ChatApp: Real-Time Chat Application
-• Built a real-time chat application using MERN stack with Socket.io for instant messaging. Implemented user authentication, one-to-one and group chats, message notifications, and media sharing.
-• Technologies: React.js, Node.js, Express.js, MongoDB, Socket.io, Redux, Git
+    // Extra-Curricular Section
+    doc.setFontSize(13);
+    doc.setFont('helvetica', 'bold');
+    doc.text('ACHIEVEMENTS & ACTIVITIES', margin, yPosition);
+    yPosition = addLine(yPosition + 2);
+    
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'normal');
+    yPosition = addText('• Published research paper: "The Impact of Smart Parking Systems on Urban Traffic Congestion: A Comprehensive Analysis"', margin + 5, yPosition, 9);
+    yPosition = addText('• Lead Coordinator for Tekskhetra 2025 – organized inter-college technical events with 20+ volunteers', margin + 5, yPosition + 1, 9);
 
-EduForum: Smart Academic Forum & Chatbot System
-• Engineered an educational platform with AI-powered chatbot, real-time forums, and department-specific notice boards for seamless academic communication.
-• Technologies: React.js, Node.js, Express.js, PostgreSQL, Git
-
-EXTRA-CURRICULAR
-• Published a research paper titled "The Impact of Smart Parking Systems on Urban Traffic Congestion: A Comprehensive Analysis" – focused on evaluating the role of smart parking in reducing city traffic.
-• Lead Coordinator for Tekskhetra 2025 – managed and organized multiple inter-college technical events with a team of 20+ volunteers.
-    `;
-
-    // Create and download the file
-    const blob = new Blob([resumeContent], { type: 'text/plain' });
-    const url = window.URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'Sumit_Mahankale_Resume.txt';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    window.URL.revokeObjectURL(url);
-  };
+    // Save the PDF
+    doc.save('Sumit_Mahankale_Resume.pdf');
+    
+    // Clean up - remove the script
+    document.head.removeChild(script);
+    
+  } catch (error) {
+    console.error('Error generating PDF:', error);
+    alert('Sorry, there was an error generating the PDF. Please try again.');
+  }
+};
 
   // Creative Code Logo Component
   const CodeLogo = ({ size = "w-8 h-8" }) => (
