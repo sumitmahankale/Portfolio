@@ -13,8 +13,7 @@ A modern, responsive portfolio website built with React.js, showcasing my projec
 - **Performance Optimized**: Fast loading with optimized images and code  
 
 ## Live Demo
-
-[View Live Portfolio](https://your-portfolio-url.com)
+https://portfolio-pearl-nu-15.vercel.app/
 
 ## Screenshots
 
