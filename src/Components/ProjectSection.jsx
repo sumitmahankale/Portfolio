@@ -6,7 +6,7 @@ import {
 
 const ProjectsSection = ({ darkMode = false }) => {
   // Technology Icons Component with better visibility
-  const TechIcon = ({ name, className = "w-4 h-4 sm:w-5 sm:h-5" }) => {
+ const TechIcon = ({ name, className = "w-4 h-4 sm:w-5 sm:h-5" }) => {
     const techLogos = {
       'React.js': (
         <svg viewBox="0 0 24 24" className={className} fill="currentColor" style={{ color: '#61DAFB' }}>
