@@ -213,7 +213,7 @@ const ProjectsSection = ({ darkMode = false }) => {
         {/* View More Projects Button */}
         <div className="text-center mt-8 sm:mt-12">
           <a 
-            href="https://github.com/sumitmahankale" 
+            href="https://github.com/sumitmahankale?tab=repositories" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
