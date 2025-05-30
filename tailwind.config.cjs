@@ -1,4 +1,4 @@
-// tailwind.config.cjs
+//Actual file with no bugs
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}"
