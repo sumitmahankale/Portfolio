@@ -81,7 +81,7 @@ const downloadResume = () => {
       degree: "Master of Computer Applications (MCA)",
       institution: "Indira College of Engineering and Management, Pune",
       period: "Aug 2024 - Present",
-      score: "CGPA: 8.77/10",
+      score: "CGPA: 8.9/10",
       icon: <GraduationCap className="w-6 h-6" />
     },
     {
@@ -95,7 +95,7 @@ const downloadResume = () => {
 
   const stats = [
     { label: "Projects", value: "5+", icon: <Rocket className="w-6 h-6" /> },
-    { label: " Current CGPA", value: "8.77", icon: <Star className="w-6 h-6" /> },
+    { label: " Current CGPA", value: "8.9", icon: <Star className="w-6 h-6" /> },
     { label: "Experience", value: "3+ months", icon: <Briefcase className="w-6 h-6" /> },
     { label: "Technologies", value: "10+", icon: <Code className="w-6 h-6" /> }
   ];
