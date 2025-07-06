@@ -94,10 +94,10 @@ const ProjectsSection = ({ darkMode = false }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className={`text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             Featured <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Projects</span>
           </h2>
-          <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-4" />
+          <div className="w-14 sm:w-18 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-4" />
           <p className={`text-base sm:text-lg max-w-2xl mx-auto px-4 sm:px-0 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
             Here are some of my recent projects that showcase my skills in full-stack development, 
             problem-solving, and creating user-centric solutions.
@@ -109,7 +109,7 @@ const ProjectsSection = ({ darkMode = false }) => {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className={`group relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-[1.02] ${
+              className={`group relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 ${
                 darkMode ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
@@ -119,7 +119,7 @@ const ProjectsSection = ({ darkMode = false }) => {
                 <img 
                   src={project.backgroundImage} 
                   alt={project.title}
-                  className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover object-center transition-transform duration-500"
                 />
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
@@ -151,7 +151,7 @@ const ProjectsSection = ({ darkMode = false }) => {
                     {project.technologies.map((tech) => (
                       <div 
                         key={tech} 
-                        className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg border transition-all duration-200 hover:scale-105 ${
+                        className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg border transition-all duration-200 ${
                           darkMode 
                             ? 'bg-gray-700 border-gray-600 text-gray-200 hover:bg-gray-600' 
                             : 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100'
@@ -170,7 +170,7 @@ const ProjectsSection = ({ darkMode = false }) => {
                     href={project.githubLink} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className={`flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium transition-all duration-200 hover:scale-105 flex-1 justify-center text-sm sm:text-base ${
+                    className={`flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium transition-all duration-200 flex-1 justify-center text-sm sm:text-base ${
                       darkMode 
                         ? 'bg-gray-700 hover:bg-gray-600 text-gray-200 hover:text-white border border-gray-600' 
                         : 'bg-gray-100 hover:bg-gray-200 text-gray-700 hover:text-gray-900 border border-gray-200'
@@ -185,7 +185,7 @@ const ProjectsSection = ({ darkMode = false }) => {
                       href={project.liveLink} 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-medium hover:scale-105 transition-transform duration-200 flex-1 justify-center text-sm sm:text-base"
+                      className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-medium transition-all duration-200 flex-1 justify-center text-sm sm:text-base"
                     >
                       <ExternalLink className="w-4 h-4" />
                       <span>Live Demo</span>
@@ -216,7 +216,7 @@ const ProjectsSection = ({ darkMode = false }) => {
             href="https://github.com/sumitmahankale?tab=repositories" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
           >
             <Github className="w-4 h-4 sm:w-5 sm:h-5" />
             View All Projects

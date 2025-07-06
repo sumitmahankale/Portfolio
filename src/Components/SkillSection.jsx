@@ -244,12 +244,7 @@ const SkillsSection = ({ darkMode = false }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
-          <h2 className={`
-            text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold 
-            mb-3 sm:mb-4 md:mb-6 
-            ${darkMode ? 'text-white' : 'text-gray-900'}
-            px-4
-          `}>
+           <h2 className={`text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
             Technical Skills
           </h2>
           

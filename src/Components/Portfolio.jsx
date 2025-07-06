@@ -43,14 +43,14 @@ const ModernPortfolio = () => {
     }
   };
 
-  // Fixed Download Resume Function
+  
   // Single Page Resume PDF Generator
 const downloadResume = () => {
   // Create a temporary anchor element
   const link = document.createElement('a');
-  link.href = 'Sumit-Mahankale Resume.pdf'; // Path to your PDF in public folder
-  link.download = 'Sumit-Mahankale-Resume.pdf'; // Filename for download
-  link.target = '_blank'; // Optional: open in new tab if download fails
+  link.href = 'Sumit-Mahankale Resume.pdf'; 
+  link.download = 'Sumit-Mahankale-Resume.pdf'; 
+  link.target = '_blank'; 
   
   // Trigger the download
   document.body.appendChild(link);
