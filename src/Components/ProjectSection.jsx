@@ -64,6 +64,18 @@ const ProjectsSection = ({ darkMode = false }) => {
   // Projects data
   const projects = [
     {
+      title: "FinJar",
+      subtitle: "Professional Fintech Application",
+      description: "A professional fintech backend application built with Spring Boot that empowers users to develop disciplined saving habits through digital savings jars with real-time analytics and secure JWT authentication.",
+      technologies: ["Spring Boot", "React.js", "MySQL", "HTML5"],
+      icon: <Database className="w-5 h-5 sm:w-6 sm:h-6" />,
+      githubLink: "https://github.com/sumitmahankale/FinJar",
+      liveLink: null,
+      backgroundImage: "Screenshot 2025-07-12 095109.png",
+      featured: true,
+      stats: { stars: 15, forks: 4 }
+    },
+    {
       title: "FindMySpot",
       subtitle: "Real-Time Parking Locator",
       description: "A comprehensive parking solution using MERN stack with real-time availability tracking, interactive maps, and seamless user experience for finding and booking parking spots.",
@@ -86,6 +98,18 @@ const ProjectsSection = ({ darkMode = false }) => {
       backgroundImage: "DASHBOARD.jpg",
       featured: false,
       stats: { stars: 8, forks: 2 }
+    },
+    {
+      title: "SplitWise",
+      subtitle: "Expense Management Application",
+      description: "A Spring Boot expense management application for tracking and splitting shared expenses with automatic balance calculation, simplified debt settlement, and secure user authentication.",
+      technologies: ["Spring Boot", "HTML5", "CSS3", "MySQL"],
+      icon: <Database className="w-5 h-5 sm:w-6 sm:h-6" />,
+      githubLink: "https://github.com/sumitmahankale/SplitWise",
+      liveLink: null,
+      backgroundImage: "image.png",
+      featured: false,
+      stats: { stars: 6, forks: 2 }
     }
   ];
 
