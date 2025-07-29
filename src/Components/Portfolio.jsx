@@ -48,8 +48,8 @@ const ModernPortfolio = () => {
 const downloadResume = () => {
   // Create a temporary anchor element
   const link = document.createElement('a');
-  link.href = 'Sumit-Mahankale Resume.pdf'; 
-  link.download = 'Sumit-Mahankale-Resume.pdf'; 
+  link.href = 'Sumit Mahankale Resume.pdf'; 
+  link.download = 'Sumit Mahankale Resume.pdf'; 
   link.target = '_blank'; 
   
   // Trigger the download
