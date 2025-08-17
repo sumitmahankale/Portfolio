@@ -70,7 +70,7 @@ const ProjectsSection = ({ darkMode = false }) => {
       technologies: ["Spring Boot", "React.js", "MySQL", "HTML5"],
       icon: <Database className="w-5 h-5 sm:w-6 sm:h-6" />,
       githubLink: "https://github.com/sumitmahankale/FinJar",
-      liveLink: null,
+  liveLink: "https://finjar.vercel.app/",
       backgroundImage: "Screenshot 2025-07-12 095109.png",
       featured: true,
       stats: { stars: 15, forks: 4 }
